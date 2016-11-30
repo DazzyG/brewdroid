@@ -1,57 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                    xmlns:tools="http://schemas.android.com/tools"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="5dp">
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:padding="10dp">
 
-        <include
-            android:id="@+id/post_author_layout"
-            layout="@layout/include_beer_author"
+        <TextView
+            android:id="@+id/beer_title"
+            style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/beer_abv_value"
+            android:gravity="left"
+            android:textStyle="bold"
+            tools:text="My First Post"/>
 
-        <LinearLayout
-            android:id="@+id/star_layout"
+        <TextView
+            android:id="@+id/beer_body"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/post_author_layout"
+            android:layout_below="@+id/beer_title"
+            android:layout_marginTop="5dp"
+            tools:text="Description"
+            />
+
+        <TextView
+            android:id="@+id/beer_abv_value"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/post_author_layout"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_alignTop="@id/beer_title"
+            android:gravity="right"
+            android:textStyle="bold"
+            tools:text="7%"/>
 
-            <ImageView
-                android:id="@+id/star"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="5dp"
-                android:background="?attr/selectableItemBackground"
-                android:src="@drawable/ic_toggle_star_outline_24" />
+        <TextView
+            android:id="@+id/beer_contributed_by"
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/beer_body"
+            android:layout_marginTop="10dp"
+            android:text="@string/contributed_by"/>
 
-            <TextView
-                android:id="@+id/post_num_stars"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                tools:text="7" />
-
-        </LinearLayout>
-
-        <include layout="@layout/include_beer_text"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_alignParentLeft="true"
-                 android:layout_below="@+id/post_author_layout"
-                 android:layout_marginLeft="5dp"
-                 android:layout_marginTop="10dp" />
+        <TextView
+            android:id="@+id/beer_author"
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/beer_contributed_by"
+            android:layout_alignTop="@+id/beer_contributed_by"
+            android:layout_toRightOf="@+id/beer_contributed_by"
+            android:paddingLeft="@dimen/text_padding_small"
+            tools:text="Some Author someauthor@email.com"/>
 
     </RelativeLayout>
 

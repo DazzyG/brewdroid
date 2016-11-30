@@ -90,4 +90,23 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="brewers_tip">Brewer\'s tip</string>
+    <string name="yeast">Yeast</string>
+    <string name="food_pairing">Food Pairing</string>
+    <string name="fermentation">Fermentation</string>
+    <string name="mash_temp">Mash Temp</string>
+    <string name="malt">Malt</string>
+    <string name="hops">Hops</string>
+    <string name="basics">Basics</string>
+    <string name="volume">Volume</string>
+    <string name="boil_volume">Boil Volume</string>
+    <string name="abv">ABV</string>
+    <string name="target_fg">Target FG</string>
+    <string name="target_og">Target OG</string>
+    <string name="ebc">EBC</string>
+    <string name="srm">SRM</string>
+    <string name="ph">PH</string>
+    <string name="attenuation_level">Attenuation Level</string>
+    <string name="this_beer_is">This beer is</string>
+    <string name="contributed_by">Contributed by:</string>
 </resources>
