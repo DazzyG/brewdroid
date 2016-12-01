@@ -21,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import uk.co.dazcorp.android.brewdroid.data.Beer;
 
-public class BeerDetailActivity extends AppCompatActivity {
+public class BeerDetailActivity extends BaseActivity {
 
     public static final String EXTRA_BEER_KEY = "beer_key";
     private static final String TAG = "BEER";

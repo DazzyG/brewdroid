@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
-public class BeerListActivity extends AppCompatActivity {
+public class BeerListActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
