@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -37,7 +39,9 @@ public class BeerListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_all_beers, container, false);
 
         // [START create_database_reference]
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        ((BaseActivity)getActivity()).showProgressDialog();
         // [END create_database_reference]
 
         mRecycler = (RecyclerView) rootView.findViewById(R.id.beer_list);
@@ -60,6 +64,18 @@ public class BeerListFragment extends Fragment {
         Query postsQuery = getQuery(mDatabase);
         mAdapter = new FirebaseRecyclerAdapter<Beer, BeerViewHolder>(Beer.class, R.layout.item_beer,
                 BeerViewHolder.class, postsQuery) {
+
+            @Override
+            protected void onCancelled(DatabaseError error) {
+                super.onCancelled(error);
+                ((BaseActivity)getActivity()).hideProgressDialog();
+            }
+
+            @Override
+            protected Beer parseSnapshot(DataSnapshot snapshot) {
+                ((BaseActivity)getActivity()).hideProgressDialog();
+                return super.parseSnapshot(snapshot);
+            }
 
             @Override
             protected void populateViewHolder(final BeerViewHolder viewHolder, final Beer model, final int position) {
