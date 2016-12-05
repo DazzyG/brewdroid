@@ -109,4 +109,9 @@
     <string name="attenuation_level">Attenuation Level</string>
     <string name="this_beer_is">This beer is</string>
     <string name="contributed_by">Contributed by:</string>
+    <string name="first_brewed">First brewed</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="g">(g)</string>
+    <string name="add">Add</string>
+    <string name="attribute">Attribute</string>
 </resources>

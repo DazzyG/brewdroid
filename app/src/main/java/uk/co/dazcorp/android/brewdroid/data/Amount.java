@@ -4,7 +4,7 @@ package uk.co.dazcorp.android.brewdroid.data;
 public class Amount {
 
     private String unit;
-    private Integer value;
+    private Double value;
 
     /**
      * 
@@ -29,7 +29,7 @@ public class Amount {
      * @return
      *     The value
      */
-    public Integer getValue() {
+    public Double getValue() {
         return value;
     }
 
@@ -38,7 +38,7 @@ public class Amount {
      * @param value
      *     The value
      */
-    public void setValue(Integer value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 

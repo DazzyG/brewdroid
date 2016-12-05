@@ -15,9 +15,33 @@
         android:layout_margin="@dimen/text_margin"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/beer_first_brewed_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_brewed"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+            <TextView
+                android:id="@+id/beer_first_brewed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/text_padding_small"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                tools:text="04/2013"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_light_background"
+            android:gravity="right"
             android:padding="@dimen/text_padding_small"
             android:text="@string/this_beer_is"
             android:textAllCaps="true"
@@ -33,97 +57,35 @@
 
         <TextView
             android:id="@+id/beer_description"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/cardview_light_background"
             android:padding="@dimen/text_padding_small"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             tools:text="loosely based on our"/>
 
-        <TextView
-            android:id="@+id/beer_first_brewed"
+        <android.support.v4.widget.Space
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            tools:text="04/2013"/>
-
-        <TextView
-            android:id="@+id/beer_contributed_by"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            tools:text="Sam Mason"/>
+            android:layout_height="5dp"/>
 
         <include layout="@layout/recipe_basics"/>
 
-
-        <ImageView
+        <android.support.v4.widget.Space
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/hops"
-            android:src="@drawable/ic_hops"/>
+            android:layout_height="5dp"/>
+
+        <include layout="@layout/recipe_ingrediants"/>
 
         <TextView
-            android:id="@+id/hops_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hops"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/malt"
-            android:src="@drawable/ic_malt"/>
-
-        <TextView
-            android:id="@+id/malt_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/malt"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/mash_temp"
-            android:src="@drawable/ic_mash_temp"/>
-
-        <TextView
-            android:id="@+id/mash_temp_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mash_temp"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/fermentation"
-            android:src="@drawable/ic_fermentation"/>
-
-        <TextView
-            android:id="@+id/fermentation_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fermentation"/>
-
-        <LinearLayout
+            android:id="@+id/food_paring_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:drawableLeft="@drawable/ic_foodpairing"
+            android:drawablePadding="@dimen/text_padding_small"
+            android:text="@string/food_pairing"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/food_pairing"
-                android:src="@drawable/ic_foodpairing"/>
-
-            <TextView
-                android:id="@+id/food_paring_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/default_gap"
-                android:text="@string/food_pairing"
-                android:textAllCaps="true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
-        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="5dp"
@@ -137,66 +99,60 @@
             android:padding="@dimen/text_padding_small"
             tools:text="Goes well with fish"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/yeast"
-                android:src="@drawable/ic_yeast"/>
-
-            <TextView
-                android:id="@+id/yeast_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/default_gap"
-                android:text="@string/yeast"
-                android:textAllCaps="true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
-        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="@color/colorAccent"
             />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/brewers_tips_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:drawableLeft="@drawable/ic_brewers_tip"
+            android:drawablePadding="@dimen/text_padding_small"
+            android:padding="@dimen/default_gap"
+            android:text="@string/brewers_tip"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/brewers_tip"
-                android:src="@drawable/ic_brewers_tip"/>
-
-            <TextView
-                android:id="@+id/brewers_tips_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/default_gap"
-                android:text="@string/brewers_tip"
-                android:textAllCaps="true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
-        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="@color/colorAccent"
             />
+
         <TextView
             android:id="@+id/beer_brewers_tips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             tools:text="Achieve the red colour by using the ratio of Caramalt"/>
 
+        <include layout="@layout/recipe_mash_temp"/>
+
+        <include layout="@layout/recipe_fermentation"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/text_padding_small">
+
+            <TextView
+                android:id="@+id/beer_contributed_by_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contributed_by"/>
+
+            <TextView
+                android:id="@+id/beer_contributed_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/text_padding_small"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                tools:text="Sam Mason"/>
+
+        </LinearLayout>
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

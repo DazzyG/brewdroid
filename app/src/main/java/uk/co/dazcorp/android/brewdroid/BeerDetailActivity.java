@@ -4,10 +4,11 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import uk.co.dazcorp.android.brewdroid.data.Beer;
+import uk.co.dazcorp.android.brewdroid.data.Hop;
+import uk.co.dazcorp.android.brewdroid.data.Ingredients;
 
 public class BeerDetailActivity extends BaseActivity {
 
@@ -53,6 +56,10 @@ public class BeerDetailActivity extends BaseActivity {
     @BindView(R.id.srm_value) TextView mSRMValue;
     @BindView(R.id.ph_value) TextView mPHValue;
     @BindView(R.id.attenuation_level_value) TextView mAttenuationLevelValue;
+
+    // Hops
+
+    @BindView(R.id.hops_layout) LinearLayout mHopsLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,10 +147,20 @@ public class BeerDetailActivity extends BaseActivity {
         mPHValue.setText(String.valueOf(mBeer.getPh()));
         mAttenuationLevelValue.setText(String.format("%s%%", String.valueOf(mBeer.getAttenuation_level())));
 
+        addHops(mBeer.getIngredients());
+    }
 
+    private void addHops(Ingredients ingredients) {
+        LayoutInflater inflater = LayoutInflater.from(this);
 
-
-
+        for (Hop hop :ingredients.getHops()) {
+            View hopLayout = inflater.inflate(R.layout.item_hops, mHopsLayout, false);
+            ((TextView)ButterKnife.findById(hopLayout, R.id.hop_name)).setText(hop.getName());
+            ((TextView)ButterKnife.findById(hopLayout, R.id.hop_weight)).setText(String.valueOf(hop.getAmount().getValue()));
+            ((TextView)ButterKnife.findById(hopLayout, R.id.hop_add_time)).setText(hop.getAdd());
+            ((TextView)ButterKnife.findById(hopLayout, R.id.hop_attribute)).setText(hop.getAttribute());
+            mHopsLayout.addView(hopLayout);
+        }
     }
 
     @Override
