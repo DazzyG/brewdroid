@@ -18,11 +18,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import uk.co.dazcorp.android.brewdroid.data.Beer;
 import uk.co.dazcorp.android.brewdroid.data.Hop;
-import uk.co.dazcorp.android.brewdroid.data.Ingredients;
+import uk.co.dazcorp.android.brewdroid.data.Malt;
 
 public class BeerDetailActivity extends BaseActivity {
 
@@ -57,9 +59,10 @@ public class BeerDetailActivity extends BaseActivity {
     @BindView(R.id.ph_value) TextView mPHValue;
     @BindView(R.id.attenuation_level_value) TextView mAttenuationLevelValue;
 
-    // Hops
-
+    // Ingredients
     @BindView(R.id.hops_layout) LinearLayout mHopsLayout;
+    @BindView(R.id.malt_container) LinearLayout mMaltLayout;
+    @BindView(R.id.yeast_value) TextView mYeastValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,19 +150,32 @@ public class BeerDetailActivity extends BaseActivity {
         mPHValue.setText(String.valueOf(mBeer.getPh()));
         mAttenuationLevelValue.setText(String.format("%s%%", String.valueOf(mBeer.getAttenuation_level())));
 
-        addHops(mBeer.getIngredients());
+        addHops(mBeer.getIngredients().getHops());
+        addMalt(mBeer.getIngredients().getMalt());
+        mYeastValue.setText(mBeer.getIngredients().getYeast());
     }
 
-    private void addHops(Ingredients ingredients) {
+    private void addHops(List<Hop> ingredients) {
         LayoutInflater inflater = LayoutInflater.from(this);
 
-        for (Hop hop :ingredients.getHops()) {
+        for (Hop hop : ingredients) {
             View hopLayout = inflater.inflate(R.layout.item_hops, mHopsLayout, false);
             ((TextView)ButterKnife.findById(hopLayout, R.id.hop_name)).setText(hop.getName());
             ((TextView)ButterKnife.findById(hopLayout, R.id.hop_weight)).setText(String.valueOf(hop.getAmount().getValue()));
             ((TextView)ButterKnife.findById(hopLayout, R.id.hop_add_time)).setText(hop.getAdd());
             ((TextView)ButterKnife.findById(hopLayout, R.id.hop_attribute)).setText(hop.getAttribute());
             mHopsLayout.addView(hopLayout);
+        }
+    }
+
+    private void addMalt(List<Malt> ingredients) {
+        LayoutInflater inflater = LayoutInflater.from(this);
+
+        for (Malt malt : ingredients) {
+            View hopLayout = inflater.inflate(R.layout.item_malt, mMaltLayout, false);
+            ((TextView)ButterKnife.findById(hopLayout, R.id.malt_name)).setText(malt.getName());
+            ((TextView)ButterKnife.findById(hopLayout, R.id.malt_weight)).setText(String.format("%s %s", String.valueOf(malt.getAmount().getValue()), malt.getAmount().getUnit()));
+            mMaltLayout.addView(hopLayout);
         }
     }
 

@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:layout_marginTop="8dp"
+              android:layout_marginBottom="8dp"
+              tools:showIn="@layout/content_beer">
 
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/yeast_title"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:drawablePadding="@dimen/text_padding_small"
-    android:drawableRight="@drawable/ic_yeast"
-    android:gravity="right"
-    android:text="@string/yeast"
-    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-    tools:showIn="@layout/content_beer"/>
+    <TextView
+        android:id="@+id/yeast_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/text_padding_small"
+        android:drawableRight="@drawable/ic_yeast"
+        android:gravity="right"
+        android:text="@string/yeast"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/text_padding_small"
+        android:layout_marginTop="@dimen/text_padding_small"
+        android:background="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/yeast_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+        tools:text="Wyeast 1056 - American Ale™"/>
+</LinearLayout>

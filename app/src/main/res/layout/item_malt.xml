@@ -6,35 +6,19 @@
               android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/hop_name"
+        android:id="@+id/malt_name"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-        tools:text="Chinook"/>
+        tools:text="Extra Pale"/>
     <TextView
-        android:id="@+id/hop_weight"
+        android:id="@+id/malt_weight"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-        tools:text="17.5"/>
-    <TextView
-        android:id="@+id/hop_add_time"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-        tools:text="Middle"/>
-    <TextView
-        android:id="@+id/hop_attribute"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-        tools:text="Bitter"/>
+        tools:text="17.5kg"/>
 </LinearLayout>
