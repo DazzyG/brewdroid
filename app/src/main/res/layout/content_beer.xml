@@ -40,7 +40,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/cardview_light_background"
             android:gravity="right"
             android:padding="@dimen/text_padding_small"
             android:text="@string/this_beer_is"
@@ -59,7 +58,6 @@
             android:id="@+id/beer_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/cardview_light_background"
             android:padding="@dimen/text_padding_small"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             tools:text="loosely based on our"/>
@@ -89,6 +87,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:background="@color/colorAccent"
             />
 
@@ -97,19 +97,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/text_padding_small"
-            tools:text="Goes well with fish"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:background="@color/colorAccent"
-            />
+            tools:text="- Goes well with fish\n-Goes well with pork"/>
 
         <TextView
             android:id="@+id/brewers_tips_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_brewers_tip"
+            android:drawableRight="@drawable/ic_brewers_tip"
+            android:gravity="right"
             android:drawablePadding="@dimen/text_padding_small"
             android:padding="@dimen/default_gap"
             android:text="@string/brewers_tip"
@@ -123,9 +118,19 @@
 
         <TextView
             android:id="@+id/beer_brewers_tips"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="@dimen/text_padding_small"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             tools:text="Achieve the red colour by using the ratio of Caramalt"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textAllCaps="true"
+            android:text="@string/ingredients"
+            android:padding="@dimen/text_padding_small"/>
 
         <include layout="@layout/recipe_mash_temp"/>
 

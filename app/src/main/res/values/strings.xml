@@ -114,4 +114,6 @@
     <string name="g">(g)</string>
     <string name="add">Add</string>
     <string name="attribute">Attribute</string>
+    <string name="sign_in_cancelled">Sign in cancelled</string>
+    <string name="no_internet_connection">No internet connection</string>
 </resources>

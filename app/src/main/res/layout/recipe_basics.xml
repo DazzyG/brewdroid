@@ -8,8 +8,7 @@
     android:layout_height="match_parent"
     app:columnCount="3"
     app:rowCount="11"
-    tools:showIn="@layout/content_beer"
-    android:background="@color/cardview_light_background">
+    tools:showIn="@layout/content_beer">
 
     <TextView
         app:layout_row="0"
