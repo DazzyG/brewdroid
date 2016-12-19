@@ -116,4 +116,6 @@
     <string name="attribute">Attribute</string>
     <string name="sign_in_cancelled">Sign in cancelled</string>
     <string name="no_internet_connection">No internet connection</string>
+    <string name="all">All</string>
+    <string name="favourites">Favourites</string>
 </resources>
