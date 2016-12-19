@@ -40,7 +40,7 @@ public class BeerListFragment extends Fragment {
 
         // [START create_database_reference]
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("beers");
         ((BaseActivity)getActivity()).showProgressDialog();
         // [END create_database_reference]
 

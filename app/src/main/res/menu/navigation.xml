@@ -2,17 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/recents"
-
-        android:title="Recents" />
+        android:id="@+id/all_beers"
+        android:title="All" />
 
     <item
         android:id="@+id/favourites"
         android:icon="@drawable/ic_favorite_24dp"
         android:title="Favourites" />
-
-    <item
-        android:id="@+id/nearby"
-
-        android:title="Nearby" />
 </menu>

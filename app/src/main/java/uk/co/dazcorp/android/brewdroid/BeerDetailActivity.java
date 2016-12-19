@@ -107,7 +107,7 @@ public class BeerDetailActivity extends BaseActivity {
             throw new IllegalArgumentException("Must pass EXTRA_BEER_KEY");
         }
 
-        mBeerReference = FirebaseDatabase.getInstance().getReference().child(mBeerKey);
+        mBeerReference = FirebaseDatabase.getInstance().getReference().child("beers").child(mBeerKey);
     }
 
     @Override
